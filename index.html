@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coding Quiz Challenge</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    </head>
+    <body>
+        <div id="controls">
+            <div id="info">
+                <!--added high scores link and timer-->
+                <a href="highscores.html" class="scores">View High Scores</a>
+                <div id="timer1">
+                    <span class="timer-text">
+                        <p>Time:<span id="time">0</span></p>
+                    </span>
+                    <main>
+                        <div
+                            class="container">
+                            <!---Start Quiz-->
+                            <div class="container1" id="startpage">
+                                <h2>Coding Quiz Challenge</h2>
+                                <p id="intro">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by 10 seconds!</p>
+                                <button id="start-button">Start</button>
+                            </div>
+                            <div class="hidden" id="quiz">
+                                <!--Quiz Section-->
+                                <!--added container div-->
+                                    <div class="controls"> <div class="container2">
+                                        <div id="questions">
+                                            <dl>
+                                                <dt>
+                                                    <button class="Quizbutton" id="one"></button>
+                                                </dt>
+                                                <dt>
+                                                    <button class="Quizbutton" id="two"></button>
+                                                </dt>
+                                                <dt>
+                                                    <button class="Quizbutton" id="three"></button>
+                                                </dt>
+                                                <dt>
+                                                    <button class="Quizbutton" id="four"></button>
+                                                </dt>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="answer"></div>
+                                <!--end of quiz-->
+                                <section id="all-done">
+                                    <h2>All done!</h2>
+                                    <div id="finalScore">Your final score is:
+                                    </div>
+                                    <!--Enter Initials-->
+                                    <form>
+                                        <input
+                                        type="text" size="40" placeholder="Enter you name for high score" id="name"/>
+                                        <!--Submit Button-->
+                                        <button id="submitScoreBtn">Submit Score</button>
+                                    </form>
+                                </section>
+                            </div>
+                            <script src="assets\js\questions.js"></script>
+                            <script src="assets\js\script.js"></script>
+                        </div>
+                        <div id="info"></div>
+                    </div>
+                </main>
+            <b/body>
+        </html>

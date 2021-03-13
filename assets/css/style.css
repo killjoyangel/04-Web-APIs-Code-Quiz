@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #eff5f8
+  }
+
+
+.title {
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#intro{
+font-family:Arial, Helvetica, sans-serif;
+text-align: wrap;
+font-weight: bold;
+font-size: 25px;
+}
+
+
+.scores{
+color: purple;
+font-size: 20px; 
+};
+
+
+a {
+  position: relative;
+  font-size: 30px;
+}
+
+.container {
+    display: block;
+    margin: 80px auto;
+    text-align: center;
+    transition: 0.3s;
+    width: 60vw;
+    padding: 20px;
+    font-size: 30px;
+   
+  }
+
+  #one #two #three #four{
+    display: block;
+    flex-direction: column;
+    margin: 80px auto;
+    text-align: center;
+    background-color: purple;
+    color: white;
+    transition: 0.3s;
+    width: 60vw;
+    padding: 20px;
+    font-size: 30px;
+   
+  }
+  
+  #one #two #three #four:hover {
+  background-color: rgb(164, 128, 197);
+  }
+
+
+.hidden {
+    display: none;
+  }
+
+  .btn .btn-dark {
+    background-color: purple;
+    color: white;
+  }
+
+  header {
+    padding: 40px;
+    text-align: center;
+     color: black;
+    border-bottom:30px #879274;
+    font-size: 50px;
+  }
+
+  
+  #timer1 {
+    height: 0px;
+    padding: 0px;
+    color: black;
+    text-align:right
+  }
+
+
+/*button */
+button {
+    background-color:purple;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    text-align: center;
+    transition-duration: 0.15s;
+    margin-top: 0.6em;
+  }
+
+#start-button{
+  background-color:purple;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 30px;
+  text-align: center;
+}
+
+  #codingquiz {
+    font-size: 40px;
+    text-align:center;
+  }
+  
+  #timer-count {
+    height: 60px;
+    padding: 10px;
+    color: black;
+    text-align:right;
+    font-size: 20px;
+  }
+  
+  .timer-text {
+    padding: 55px;
+  }
+
+  @media screen and (min-width: 600px) {
+    img {
+        min-width: 60%;
+    }
+  }
