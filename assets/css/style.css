@@ -19,7 +19,6 @@ font-weight: bold;
 font-size: 25px;
 }
 
-
 .scores{
 color: purple;
 font-size: 20px; 
@@ -42,22 +41,61 @@ a {
    
   }
 
-  #one #two #three #four{
-    display: block;
-    flex-direction: column;
-    margin: 80px auto;
-    text-align: center;
-    background-color: purple;
+  #questions{
+      color: black;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 25px;
+      font-weight: 600;
+
+  }
+
+  .answer_list{
+      padding: 20px 0;
+      display: block;
+  }
+
+
+
+
+
+.answers{
+    background: rgb(164, 128, 197);;
+    border: 1px solid purple;
     color: white;
-    transition: 0.3s;
-    width: 60vw;
-    padding: 20px;
-    font-size: 30px;
-   
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    display:inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 17px;
+    text-align: center;
+    transition: all 0.3s ease;
   }
   
-  #one #two #three #four:hover {
-  background-color: rgb(164, 128, 197);
+  .strtbtn:hover{
+    background: #a480c5;
+    border-color:rebeccapurple;
+}
+
+
+.answers:hover{
+    color:  purple;
+    background: #a480c5;
+    border-color:rebeccapurple;
+}
+  
+.answer_list .answers{
+    height: flex;
+    width: flex;
+    border: 2px; 
+    
+}
+  
+  
+  
+  rgb(164, 128, 197);
   }
 
 
@@ -65,20 +103,7 @@ a {
     display: none;
   }
 
-  .btn .btn-dark {
-    background-color: purple;
-    color: white;
-  }
-
-  header {
-    padding: 40px;
-    text-align: center;
-     color: black;
-    border-bottom:30px #879274;
-    font-size: 50px;
-  }
-
-  
+    
   #timer1 {
     height: 0px;
     padding: 0px;
@@ -87,8 +112,7 @@ a {
   }
 
 
-/*button */
-button {
+#strtbtn{
     background-color:purple;
     border-radius: 8px;
     color: white;
@@ -98,6 +122,15 @@ button {
     transition-duration: 0.15s;
     margin-top: 0.6em;
   }
+
+  #start-button{
+    color:  purple;
+    background: #a480c5;
+    border-color:rebeccapurple;
+}
+  
+
+
 
 #start-button{
   background-color:purple;
