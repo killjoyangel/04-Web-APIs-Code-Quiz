@@ -1,135 +1,79 @@
-let start_button = document.getElementById("#start_button");
-var continaer = document.getElementsByClassName(".hidden");
-var quiz = document.getElementsByClassName(".hidden");
-var timerEl = document.getElementById("#timer1");
-var secondsEl = document.getElementById("#time");
-var nextButton = document.getElementById("#next");
-var choiceA = document.getElementById("A");
-var choiceB = document.getElementById("B");
-var choiceC = document.getElementById("C");
-var choiceD = document.getElementById("D");
-var counter = document.getElementById("counter");
-var timeGuage = document.getElementById("timeGauge");
-var progress = document.getElementById("progress");
-var score = document.getElementById("score");
+var timeEl = document.querySelector(".time");
+var secondsLeft = 30;
+function setTime() {
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft;
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+    }
 
-//questions
+  }, 1000);
+}
+
+
+var questionIndex = 0;
+var startbutton = document.querySelector(".start-button");
+var introText = document.querySelector("#intro");
+var quiz = document.querySelector("#quiz");
+function startQuiz() {
+  setTime()
+  startbutton.setAttribute("class", "hide");
+  introText.setAttribute("class", "hide");
+  displayQuestion();
+}
+
+
+
 var questions = [
   {
-    question: "Commonly used data types DO NOT include:",
-    choiceA: "1.strings",
-    ChoiceB: "2.Booleans",
-    ChoiceC: "3.Alerts",
-    ChoiceD: "4.Numbers",
-    Correct: "C",
-  },
-  {
-    question: "The condition in an if/else statement is enclose within____.",
-    choiceA: "1.Quotes",
-    ChoiceB: "2.Curly Brackets",
-    ChoiceC: "3.Parantheses",
-    ChoiceD: "4.Square Brackets",
-    Correct: "C",
+    title: "Commonly used data types DO NOT include:",
+    choices:["strings","Booleans","Alerts", "Numbers"],
+    answer: "Alerts"
   },
 
   {
-    question: "Arrays in JavaScript can be used to store_______.",
-    choiceA: "1.Numbers and Functions",
-    ChoiceB: "2. ptjer arrays",
-    ChoiceC: "3.Booleans",
-    ChoiceD: "4.All of the above.",
-    Correct: "D",
+    title: "Arrays in JavaScript can be used to store_______.",
+    choices:["Numbers and Functions","ptjer arrays","Booleans", "All of the above."],
+    answer: "All of the Above"
   },
-
   {
-    question: "Which of these is not used to loop?",
-    choiceA: "1.for",
-    ChoiceB: "2.while",
-    ChoiceC: "3.foreach",
-    ChoiceD: "4.sequence",
-    Correct: "D",
+    title: "Which of these is not used to loop?",
+    choices: ["for", "while", "foreach", "sequence"],
+    answer: "sequence"
   },
-];
 
-//variables go here
-const lastQuestion = questions.length - 1;
-let startingQuestion = 0;
-let count = 0;
-const questionTime = 10;
-const guageWidth = 150;
-const guageUnit = guageWidth / questionTime;
-let TIMER;
+]
 
-function renderQuestion() {
-  let q = questions[startingQuestion];
-  question.innerHTML = "<p>" + q.question + "</p>";
-  ChoiceA.innerHTML = q.ChoiceA;
-  ChoiceB.innerHTML = q.ChoiceB;
-  ChoiceC.innerHTML = q.ChoiceC;
-  ChoiceD.innerHTML = q.ChoiceD;
-}
+function displayQuestion() {
+  quiz.innerHTML = "";
+  var currentQuestion = questions[questionIndex]
+  var title = document.createElement("h2")
+  title.textContent = currentQuestion.question;
+  quiz.append(title)
 
-start.addEventListener("click", startQuiz);
-
-function startQuiz() {
-  start.style.display = "none";
-  renderQuestion();
-  quiz.style.display = "block";
-  renderProgress();
-  renderCounter();
-  TIMER = setInterval(renderCounter, 1000);
-}
-
-function renderProgress() {
-  for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
-    progress.innerHTML += "div class='prog' id=" + qIndex + "></div>";
+  for (i = 0; i < currentQuestion.choices.length; i++) {
+    var button = document.createElement("button")
+    button.textContent = currentQuestion.choices[i]
+    button.setAttribute("class", "choice")
+    button.setAttribute("value", currentQuestion.choices[i])
+    button.onclick = confirmAnswer
+    quiz.append(button)
   }
 }
-
-function renderCounter() {
-  if (count < questionTime) {
-    counter.innerHTML = count * guageUnit;
-    count++;
-  } else {
-    count = 0;
+function confirmAnswer() {
+  if (this.value !== questions[questionIndex].answer) {
+    secondsLeft -= 5
+    timeEl.textContent = secondsLeft
   }
-}
-
-choiceA.addEventListener("click", answerCheck);
-ChoiceB.addEventListener("click", answerCheck);
-ChoiceC.addEventListener("click", answerCheck);
-ChoiceD.addEventListener("click", answerCheck);
-
-
-function answerCheck() {
-	startingQuestion++
-  question.innerHTML = "<p>" + q.question + "</p>";
-  ChoiceA.innerHTML = q.ChoiceA;
-  ChoiceB.innerHTML = q.ChoiceB;
-  ChoiceC.innerHTML = q.ChoiceC;
-  ChoiceD.innerHTML = q.ChoiceD;
+  else {
+    secondsLeft += 5
+    timeEl.textContent = secondsLeft
+  }
+  questionIndex++
+  displayQuestion()
 }
 
 
+startbutton.onclick = startQuiz;
 
-
-
-
-
-
-
-
-
-
-
-//check if choice a is correct answer decrease score is wronge 
-	renderQuestion()
-
- 
-
-
-
-
-
-
-//add event listener add 1 to question counter, run render question function

@@ -1,61 +1,37 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Coding Quiz Challenge</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Time!</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="controls">
-        <div id="info">
-            <!--added high scores link and timer-->
-            <a href="highscores.html" class="scores">View High Scores</a>
-            <div id="timer1">
-                <span class="timer-text">
-                    <p>Time:<span id="time">0</span></p>
-                </span>
-                <main>
-                    <div class="container">
-                        <!---Start Quiz-->
-                        <div class="container1" id="startpage">
-                            <h2>Coding Quiz Challenge</h2>
-                            <p id="intro">Try to answer the following code-related questions within the time limit. Keep
-                                in mind that incorrect answers will penalize your score time by 10 seconds!</p>
-                            <button id="start-button">Start</button>
-                        </div>
-                        <div style="display: none;" id="quiz">
-                            <!--Quiz Section-->
-                            <!--added container div-->
-                            <div id="question"></div>
-                            <div id="choices">
-                                <div class="choice" id="A" onclick="checkanswer('A')></div>
-                                    <div class= 'choice' id= 'B'onclick="checkanswer( 'B')></div>
-                                    <div class= 'choice' id= 'C'onclick="checkanswer('C')></div>
-                                    <div class= 'choice' id= 'D' onclick="checkanswer('D')></div>
-                                <div style= "display: none;" id="answer"></div>
-                               
-                               
-                               <!--end of quiz-->
-                                <section style="display: none;" id="all-done">
-                                    <h2>All done!</h2>
-                                    <divs tyle="display: none;" id="finalScore">Your final score is:
-                            </div>
-                            <!--Enter Initials-->
-                            <form style="display: none;">
-                                <input type="text" size="40" placeholder="Enter you name for high score" id="name" />
-                                <!--Submit Button-->
-                                <button style="display: none;" id="submitScoreBtn">Submit Score</button>
-                            </form>
-                            </section>
-                        </div>
-                        <script src="assets\js\script.js"></script>
-                    </div>
-                    <div id="info"></div>
-            </div>
-            </main>
-            <b /body>
+    <header>
+        <a href="highscores.html">
+            <h1 class="float-left">View high scores!</h1>
+        </a>
+        <h1 class="float-right">Time remaining: <span class="time"></span></h1>
+    </header>
+
+    <main>
+            <h1>Coding Quiz Challenge</h1>
+            <br>
+            <p id="intro">Try to answer the following code-related questions within the time limit. Keep
+                in mind that incorrect answers will penalize your score time by 10 seconds!</p>
+            <br>
+        <div class="center" id="quiz"></div>
+            <button class="start-button">Begin Quiz</button>
+
+
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
 
 </html>
