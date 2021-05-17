@@ -20,7 +20,7 @@ We created a static website that you can view on this link:
 ![screenshot](assets/img/cssthumb.JPG)
 
 ### Created JS 
-![screenshot](assets/images/jsthumb.JPG)
+![screenshot](assets/img/jsthumb.JPG)
 
 
 ## Final Product
